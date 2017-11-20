@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<br><br>
+<center>
+    <h2 >Add Student Quiz Result</h2>
+    </center>
+</head>
+
+<body bgcolor="gold">
+<center>
+<div >
+<form action="/logout"> 
+<div>
+	<button type="submit">Log Off</button>
+</div>
+</form>
+
+<form action="/dashboard"> 
+<div>
+	<button  type="submit">DashBoard</button>
+</div>
+</form>
+</div>
+
+<form action="" method ="post">
+
+  <div >
+
+<h2 >Students</h2>  
+<select name = "select_student">
+{% for student in dbdata_students %}
+	<option value={{student[0]}}>{{"(" + student[0]| string + ") " + student[1] + " " + student[2]}}</option>
+{% endfor %}
+</select>
+
+<h2 >Quizzes</h2>
+<select name = "select_quiz">
+{% for quiz in dbdata_quizzes %}
+	<option value={{quiz[0]}}>{{"(" + quiz[0]| string + ") " + quiz[1] | string + " - " + quiz[3] | string}}</option>
+{% endfor %}
+</select>
+
+<h2 >Score</h2><h2 style="color:#FF0000"> {{add_score_msg}}</h2>
+<input type="number" placeholder="Score (0-100)" name="score"  required>
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<p style="color:#FF0000">{{error_mgs}}</p>
+</center>
+</body>
+</html>

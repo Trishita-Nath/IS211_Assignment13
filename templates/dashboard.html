@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<br><br>
+    <h2 ><center><b>DashBoard</b></h2></center>
+</head>
+
+<body bgcolor="gold">
+<center>
+<div >
+<form action="/logout"> 
+<div>
+	<button  type="submit">Log Off</button>
+</div>
+</form>
+
+<form action="/student/add"> 
+<div>
+	<button  type="submit">Add Students</button>
+</div>
+</form>
+
+<form action="/quiz/add"> 
+<div>
+	<button  type="submit">Add Quizzes</button>
+</div>
+</form>
+
+<form action="/results/add"> 
+<div>
+	<button  type="submit">Add Results</button>
+</div>
+</form>
+
+</div>
+
+
+<h2 ><b>Students</b></h2>
+<table name = "students" border = "2" bgcolor = "#e5e5ff">
+<tr>
+	<th>Student ID</th><th>First Name</th><th>Last Name</th><th>Quiz Details</th>	
+</tr>
+	{% for student in dbdata_students %}
+<tr>
+	<th >{{student[0]}}</th><th >{{student[1]}}</th><th >{{student[2]}}</th>
+	<th ><a href = "/student/{{student[0]}}" >View Results</a></th>
+	
+	{% endfor %}
+</tr>
+</table>
+
+<h2 ><b> Quizzes </b></h2>
+<table name = "quizzes" border = "2" bgcolor = "#e5e5ff">
+<tr>
+	<th>Quiz ID</th><th>Subject</th><th>Question Count</th><th>Quiz Date</th>
+</tr>
+	{% for quiz in dbdata_quizzes %}
+<tr>
+	<th >{{quiz[0]}}</th><th>{{quiz[1]}}</th><th >{{quiz[2]}}</th><th >{{quiz[3]}}</th>
+	
+	{% endfor %}
+</tr>
+</table>
+<p  style="color:red">{{error_msg}}</p>
+</center>
+</body>
+</html>

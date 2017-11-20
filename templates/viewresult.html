@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center>
+<br><br>
+    <h2 >View Student Quiz Result</h2>
+    </center>
+</head>
+<body bgcolor="gold">
+<center>
+<div >
+<form action="/logout"> 
+<div>
+	<button  type="submit">Log Off</button>
+</div>
+</form>
+
+<form action="/dashboard"> 
+<div>
+	<button  type="submit">DashBoard</button>
+</div>
+
+<h2 >Students</h2>
+<table name = "students" border = "2" bgcolor = "#e5e5ff">
+<tr>
+	<th>First Name</th><th>Last Name</th><th>Quiz Subject</th><th>Quiz Score</th><th>Quiz Date</th>		
+</tr>
+	{% for quiz_result in quiz_results %}
+<tr>
+	<th >{{quiz_result[0]}}</th><th >{{quiz_result[1]}}</th><th>{{quiz_result[2]}}</th>
+	<th >{{quiz_result[3]}}</th><th>{{quiz_result[4]}}</th>
+	
+	{% endfor %}
+</tr>
+</table>
+
+</form>
+</div>
+<p  style="color:red">{{error_mgs}}</p>
+<p  style="color:#FF0000">{{quiz_results_mgs}}</p>
+</center>
+</body>
+</html>

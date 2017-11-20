@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center>
+<br><br>
+    <h2>Add Students</h2>
+    </center>
+</head>
+
+<body bgcolor="gold">
+<center>
+<div >
+<form action="/logout"> 
+<div>
+	<button  type="submit">Log Off</button>
+</div>
+</form>
+<form action="/dashboard"> 
+<div>
+	<button  type="submit">DashBoard</button>
+</div>
+</form>
+</div>
+<br><br>
+<form action="" method ="post">
+
+  <div >
+    <label ><b>Student First Name</b></label>
+    <input type="text" placeholder="First Name" name="sfname"  required>
+
+    <label ><b>Student Last Name</b></label>
+    <input type="text" placeholder="Last Name" name="slname"  required>
+        
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<p style="color:red">{{error_mgs}}</p>
+</center>
+</body>
+</html>
